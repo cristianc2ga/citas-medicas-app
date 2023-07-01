@@ -83,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtCorreo" />
 
     <Button
-        android:id="@+id/btnRegistrarMedico"
+        android:id="@+id/btnRegistroM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -93,7 +93,7 @@
         android:text="Registrar"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtExpecialidad"
+        app:layout_constraintTop_toBottomOf="@+id/txtEspecialidad"
         tools:text="Registrar" />
 
     <Button
@@ -106,12 +106,12 @@
         android:backgroundTint="#00BCD4"
         android:text="Regresar"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/btnRegistrarMedico"
-        app:layout_constraintTop_toBottomOf="@+id/txtExpecialidad"
+        app:layout_constraintStart_toEndOf="@+id/btnRegistroM"
+        app:layout_constraintTop_toBottomOf="@+id/txtEspecialidad"
         tools:text="Regresar" />
 
     <EditText
-        android:id="@+id/txtExpecialidad"
+        android:id="@+id/txtEspecialidad"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"

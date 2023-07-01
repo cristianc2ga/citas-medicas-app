@@ -2,9 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/spinnerMedicos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroCita">
+    tools:context=".RegistroCita"
+    tools:layout_editor_absoluteX="6dp"
+    tools:layout_editor_absoluteY="0dp">
 
     <TextView
         android:id="@+id/textView"
@@ -17,39 +20,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/txtPacienteCita"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:hint="Ingrese el nombre del paciente"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/txtMedicoCita"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:hint="Ingrese el nombre del medico"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPacienteCita" />
-
+    <Button
+        android:id="@+id/btnRegresarCitas"
+        android:layout_width="150dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="28dp"
+        android:background="#F40380"
+        android:backgroundTint="#00BCD4"
+        android:text="Regresar"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toEndOf="@+id/btnRegistrarCita"
+        app:layout_constraintTop_toBottomOf="@+id/txtFechaCita"
+        tools:text="Regresar" />
 
     <Button
         android:id="@+id/btnRegistrarCita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="220dp"
+        android:layout_width="160dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="128dp"
         android:background="#F40380"
         android:backgroundTint="#00BCD4"
         android:text="Registrar"
@@ -59,24 +53,10 @@
         tools:text="Registrar" />
 
     <Button
-        android:id="@+id/btnRegresarCitas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="220dp"
-        android:background="#F40380"
-        android:backgroundTint="#00BCD4"
-        android:text="Regresar"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/btnRegistrarCita"
-        app:layout_constraintTop_toBottomOf="@+id/txtFechaCita"
-        tools:text="Regresar" />
-
-    <Button
         android:id="@+id/btnInicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="100dp"
         android:text="Inicio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,12 +67,31 @@
         android:id="@+id/txtFechaCita"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:hint="Fecha cita"
         android:inputType="date"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMedicoCita" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerMed" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Spinner
+        android:id="@+id/spinnerMed"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

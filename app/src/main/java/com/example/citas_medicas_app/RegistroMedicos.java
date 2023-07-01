@@ -16,15 +16,38 @@ public class RegistroMedicos extends AppCompatActivity {
     private EditText txtCorreo;
     private EditText txtCelular;
     private EditText txtEspecialidad;
-    private Button btnRegistro;
+    private Button btnRegistroM;
     private Button btnRegresar;
     private Button btnInicio;
+    private Database_admin obj_base;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_medicos);
         incialize();
+
+        btnRegistroM.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                boolean confirm = obj_base.connectSQL();
+                if(confirm){
+                    Toast.makeText(RegistroMedicos.this,"Conexión BD correcta", Toast.LENGTH_LONG).show();
+                    boolean confirm_registro = obj_base.insertMedicos(
+                            txtNombre.getText().toString(),
+                            txtApellido.getText().toString(),
+                            txtDocumento.getText().toString(),
+                            txtCorreo.getText().toString(),
+                            txtCelular.getText().toString(),
+                            txtEspecialidad.getText().toString());
+                    Toast.makeText(RegistroMedicos.this,"Medico registrado correctamente", Toast.LENGTH_LONG).show();
+
+                }else{
+                    Toast.makeText(RegistroMedicos.this,"Failed", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
         btnRegresar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -48,10 +71,11 @@ public class RegistroMedicos extends AppCompatActivity {
         txtDocumento = (EditText) findViewById(R.id.txtDocumento);
         txtCorreo = (EditText) findViewById(R.id.txtCorreo);
         txtCelular = (EditText) findViewById(R.id.txtCelular);
-        txtEspecialidad = (EditText) findViewById(R.id.txtExpecialidad);
-        btnRegistro = (Button) findViewById(R.id.btnRegistrarMedico);
+        txtEspecialidad = (EditText) findViewById(R.id.txtEspecialidad);
+        btnRegistroM = (Button) findViewById(R.id.btnRegistroM);
         btnRegresar = (Button) findViewById(R.id.btnRegresarMedicos);
         btnInicio = (Button) findViewById(R.id.btnInicio);
+        obj_base = new Database_admin();
 
     }
 }
